@@ -96,7 +96,7 @@ Common flags:
 ### Step 2: Convert results
 
 ```bash
-python3 nmap_to_cherrytree.py -i scan_results.xml -o pentest_notes.ctd
+python3 cherrymap.py -i scan_results.xml -o pentest_notes.ctd
 ```
 
 ### Step 3: Open in CherryTree
