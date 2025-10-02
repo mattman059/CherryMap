@@ -162,12 +162,12 @@ def get_tool_recommendations(port_data, ip, os_type='unknown'):
             tools.extend([
                 f"smbclient -L //{ip}/ -N",
                 f"smbmap -H {ip}",
-                f"crackmapexec smb {ip} --shares",
+                f"netexec smb {ip} --shares",
                 f"nmap -p {port} --script smb-vuln* {ip}",
                 f"nmap -p {port} --script smb-enum-shares,smb-enum-users,smb-enum-domains {ip}",
                 "",
                 f"# Brute Force (use cautiously)",
-                f"crackmapexec smb {ip} -u users.txt -p passwords.txt",
+                f"netexec smb {ip} -u users.txt -p passwords.txt",
                 f"hydra -L users.txt -P /usr/share/wordlists/rockyou.txt smb://{ip}",
             ])
         elif os_type == 'linux':
@@ -183,7 +183,7 @@ def get_tool_recommendations(port_data, ip, os_type='unknown'):
             tools.extend([
                 f"smbclient -L //{ip}/ -N",
                 f"smbmap -H {ip}",
-                f"crackmapexec smb {ip} --shares",
+                f"netexec smb {ip} --shares",
                 f"enum4linux -a {ip}",
                 f"enum4linux-ng -A {ip}",
                 "",
@@ -192,7 +192,7 @@ def get_tool_recommendations(port_data, ip, os_type='unknown'):
                 f"nmap -p {port} --script smb-enum-shares,smb-enum-users,smb-enum-domains {ip}",
                 "",
                 f"# Brute Force (use cautiously)",
-                f"crackmapexec smb {ip} -u users.txt -p passwords.txt",
+                f"netexec smb {ip} -u users.txt -p passwords.txt",
                 f"hydra -L users.txt -P /usr/share/wordlists/rockyou.txt smb://{ip}",
             ])
     
@@ -252,11 +252,11 @@ def get_tool_recommendations(port_data, ip, os_type='unknown'):
         if os_type == 'windows' or os_type == 'unknown':
             tools.extend([
                 f"# WinRM Enumeration",
-                f"crackmapexec winrm {ip} -u users.txt -p passwords.txt",
+                f"netexec winrm {ip} -u users.txt -p passwords.txt",
                 f"evil-winrm -i {ip} -u administrator -p password",
                 "",
                 f"# Brute Force (use cautiously)",
-                f"crackmapexec winrm {ip} -u users.txt -p /usr/share/wordlists/rockyou.txt",
+                f"netexec winrm {ip} -u users.txt -p /usr/share/wordlists/rockyou.txt",
             ])
     
     # SNMP
