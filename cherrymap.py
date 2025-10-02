@@ -593,7 +593,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Example usage:
-  python nmap_to_cherrytree.py -i scan_results.xml -o output.ctd
+  python cherrymap.py -i scan_results.xml -o output.ctd
         """
     )
     parser.add_argument('-i', '--input', required=True, help='Input NMAP XML file')
