@@ -57,8 +57,8 @@ The generated file is organized for quick navigation:
 1. Download the script:
 
 ```bash
-wget https://raw.githubusercontent.com/yourusername/nmap-to-cherrytree/main/nmap_to_cherrytree.py
-chmod +x nmap_to_cherrytree.py
+wget https://raw.githubusercontent.com/mattman059/CherryMap/main/cherrymap.py
+chmod +x cherrymap.py
 ```
 
 2. Install CherryTree if needed:
@@ -110,7 +110,7 @@ cherrytree pentest_notes.ctd
 ## Command Line Options
 
 ```
-usage: nmap_to_cherrytree.py [-h] -i INPUT -o OUTPUT
+usage: cherrymap.py [-h] -i INPUT -o OUTPUT
 
 Convert Nmap XML output to CherryTree format
 
@@ -184,21 +184,10 @@ Each open port includes:
 
 ---
 
-## Contributing
-
-If you want to add more services or improve tool suggestions, look at:
-
-- `get_tool_recommendations()`
-- `is_real_web_service()`
-- `get_os_type()`
-
----
-
 ## License
 
 For security testing and research only. Make sure you have permission before scanning any system.
 
 ---
 
-That’s it. This script should give you a practical way to organize Nmap results into CherryTree for easier follow-up.
 
