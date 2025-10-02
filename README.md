@@ -149,7 +149,7 @@ Each open port includes:
 ## Supported Services & Tools (Examples)
 
 - **Web (HTTP/HTTPS):** gobuster, ffuf, nikto, whatweb
-- **SMB/NetBIOS:** smbclient, smbmap, crackmapexec, enum4linux
+- **SMB/NetBIOS:** smbclient, smbmap, netexec, enum4linux
 - **SSH:** ssh client, brute force tools
 - **RDP (Windows):** xfreerdp, rdesktop, hydra
 - **Databases:** mysql, psql, mongo client, impacket-mssqlclient
