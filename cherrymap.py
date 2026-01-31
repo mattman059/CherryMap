@@ -611,8 +611,25 @@ Example usage:
         
         print(f"[+] Writing to {args.output}")
         tree = ET.ElementTree(cherrytree_root)
-        ET.indent(tree, space="  ")
+        
+        def indent_xml(elem, level=0):
+            i = "\n" + level*"  "
+            if len(elem):
+                if not elem.text or not elem.text.strip():
+                    elem.text = i + "  "
+                if not elem.tail or not elem.tail.strip():
+                    elem.tail = i
+                for subelem in elem:
+                    indent_xml(subelem, level+1)
+                if not elem.tail or not elem.tail.strip():
+                    elem.tail = i
+            else:
+                if level and (not elem.tail or not elem.tail.strip()):
+                    elem.tail = i
+        
+        indent_xml(cherrytree_root)
         tree.write(args.output, encoding='UTF-8', xml_declaration=True)
+
         
         print(f"[+] Done! CherryTree document created successfully.")
         
